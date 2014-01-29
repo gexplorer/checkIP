@@ -3,13 +3,7 @@ IP=`wget -q -O - http://www.biranchi.com/ip.php`
 SCRIPTSHOME=$(dirname $0)
 IPLOG=$SCRIPTSHOME/last.ip
 
-#SMTP Config
-SMTP=smtp.host.com
-USERNAME=username@host.com
-PASSWORD=password
-
-#Send email to
-TO=to@host.com
+source $SCRIPTSHOME/checkIP.conf
 
 SUBJECT='IP Address'
 
