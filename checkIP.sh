@@ -24,7 +24,7 @@ if [[ "$LASTIP" != "$IP" ]]; then
     M="Current IP $IP was $LASTIP"
     echo $M
     echo $IP > $IPLOG
-    sendemail -u $SUBJECT -s $SMTP -t $TO -f $USERNAME -m $M -xu $USERNAME -xp $PASSWORD -o tls=yes
+    sendemail -u $SUBJECT -s $SMTP -t $TO -f $FROM -m $M -xu $USERNAME -xp $PASSWORD -o tls=yes
 else
     echo "Current IP $IP didn't change"
 fi
