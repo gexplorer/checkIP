@@ -13,6 +13,14 @@ TO=to@host.com
 
 SUBJECT='IP Address'
 
+DEPS=`which sendemail`
+
+if [[ $DEPS = "" ]]; then
+	echo "The program 'sendemail' is currently not installed. You can install it by typing:"
+	echo "sudo apt-get install sendemail"
+	exit 1;
+fi
+
 if [ ! -f "$IPLOG" ]; then
     touch $IPLOG
 fi
