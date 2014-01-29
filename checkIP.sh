@@ -19,11 +19,12 @@ fi
 
 LASTIP=`cat $IPLOG`
 if [[ "$LASTIP" != "$IP" ]]; then
-    echo "IP: $IP [$IPLOG]"
+    M="Current IP $IP was $LASTIP"
+    echo $M
     echo $IP > $IPLOG
-    sendemail -u $SUBJECT -s $SMTP -t $TO -f $USERNAME -m $IP -xu $USERNAME -xp $PASSWORD -o tls=yes
+    sendemail -u $SUBJECT -s $SMTP -t $TO -f $USERNAME -m $M -xu $USERNAME -xp $PASSWORD -o tls=yes
 else
-    echo "IP: $IP [=]"
+    echo "Current IP $IP didn't change"
 fi
 
 exit 0
