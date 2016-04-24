@@ -1,5 +1,5 @@
 #!/bin/bash
-IP=`wget -q -O - http://www.biranchi.com/ip.php`
+IP=`wget -q -O - https://api.ipify.org`
 SCRIPTSHOME=$(dirname $0)
 IPLOG=$SCRIPTSHOME/last.ip
 
